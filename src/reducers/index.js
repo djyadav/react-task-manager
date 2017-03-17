@@ -51,7 +51,7 @@ const list = (state = {}, action) => {
     	let lists = state.lists.slice();
 	    let cards = lists[action.payload.listIndex].cards.slice();
 	    let newCards = lists[action.payload.newListIndex].cards.slice();
-	    newCards.push(cards.splice(action.payload.index,1));
+	    newCards=newCards.concat(cards.splice(action.payload.index,1));
 	    lists[action.payload.listIndex].cards = cards;
 	    lists[action.payload.newListIndex].cards = newCards;
      	let newState = Object.assign({}, state);
@@ -88,7 +88,7 @@ const list = (state = {}, action) => {
       cards[action.payload.index] = selectedCard;
 	    lists[action.payload.listIndex].cards = cards;
 	    let newState = Object.assign({}, state);
-	    newState.lists = list.slice();
+	    newState.lists = lists.slice();
 	    return newState;
     }
     default:
