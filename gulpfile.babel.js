@@ -24,8 +24,8 @@ const paths = {
   entry: 'src/Index.js',
   srcCss: 'src/**/*.scss',
   srcLint: ['src/**/*.js', 'test/**/*.js'],
-  dist: 'dist',
-  distJs: 'dist/js',
+  dist: 'server/static/',
+  distJs: 'server/static/js',
   distDeploy: './dist/**/*'
 };
 
